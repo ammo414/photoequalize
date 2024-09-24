@@ -7,10 +7,9 @@ from pathlib import Path
 
 def Color_Equalize(img):
 
-
+    img[:,:,0] = cv2.equalizeHist(img[:,:,0])
     img[:,:,1] = cv2.equalizeHist(img[:,:,1])
     img[:,:,2] = cv2.equalizeHist(img[:,:,2])
-    img[:,:,0] = cv2.equalizeHist(img[:,:,0])
 
     return img
 
@@ -21,7 +20,6 @@ def Auto_Equalize(img):
     # equalize the histogram of the Y channel
     img_yuv[:, :, 0] = cv2.equalizeHist(img_yuv[:,:,0])
     # convert the YUV image back to RGB format
-    img_yuv[:, :, 0] = clahe.apply(img)
     img_output = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR)
 
     return img_output
