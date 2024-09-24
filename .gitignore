@@ -1,4 +1,3 @@
 /.venv
 /color_equalized
-/img002.jpg
-/img004.jpg
+*.jpg
