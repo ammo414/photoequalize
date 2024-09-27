@@ -7,6 +7,10 @@ from pathlib import Path
 
 def Color_Equalize(img):
 
+    #equalizes the GRB channels of the image. Not recommended generally
+    # because this method tends to add colors that weren't originally 
+    # in the image. In the case of old family "sepia" photos, though,
+    # it tends to improve them
     img[:,:,0] = cv2.equalizeHist(img[:,:,0])
     img[:,:,1] = cv2.equalizeHist(img[:,:,1])
     img[:,:,2] = cv2.equalizeHist(img[:,:,2])
